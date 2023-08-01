@@ -1,6 +1,0 @@
-pytest
-python-dotenv
-google-api-python-client
-google-auth
-openai
-discord.py
