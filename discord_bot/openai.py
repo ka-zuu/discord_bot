@@ -13,6 +13,9 @@ class OpenAIDiscordBot(commands.Bot):
         self.model = model
         self.prompt = prompt
 
+        # OpenAIのAPIキーを設定
+        openai.api_key = self.openai_api_key
+
         # Discord Botの設定
         intents = discord.Intents.default()
         intents.typing = False  # typingを受け取らないように
@@ -46,14 +49,14 @@ class OpenAIDiscordBot(commands.Bot):
                 while message.reference:
                     message = await message.channel.fetch_message(message.reference.message_id)
                     # 返信がBotの場合はrole:assistant、ユーザーの場合はrole:userとして会話履歴に追加
-                    if message.author == bot.user:
+                    if message.author == self.user:
                         conversations.insert(1, {"role": "assistant", "content": message.content})
                     else:
                         conversations.insert(1, {"role": "user", "content": message.content})
 
                 # OpenAIに問い合わせ
                 response = openai.ChatCompletion.create(
-                    model=MODEL,
+                    model=self.model,
                     messages=conversations,
                     max_tokens=2048,
                     temperature=0.8,
