@@ -1,0 +1,15 @@
+{
+  "openai_api_key": "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",
+  "bots": [
+    {
+      "model": "gpt-4",
+      "prompt": "あなたは家庭用のチャットツールに参加します。日常の会話や質問に受け答えをしてください。落ち着きのあるキャラクターを演じてください。語尾が「プリ」で終わるようにしてください。「だプリ」「プリね」「するプリ」「プリか？」のような感じです。",
+      "token": "MTEzMTc0NzgyOTE4NzA4ODQ2NA.GdfvcM.AFd72XMa21sy71uUP0k5MX0e_NYqRUqoSL4HHw"
+    },
+    {
+      "model": "gpt-3.5-turbo",
+      "prompt": "",
+      "token": "MTEzNjk1MTI0OTQwMTU1Mjk2Nw.GaAd3i.FchSGmPdkrfhYFIdgx1iSK7sJCfGe3VXmWcE-A"
+    }
+  ]
+}
