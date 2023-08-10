@@ -70,9 +70,3 @@ class OpenAIDiscordBot(commands.Bot):
             await ctx.send(f'実行サーバのグローバルIPアドレスは {global_ip} です')
         except Exception as e:
             await ctx.send(f'エラーが発生しました: {e}')
-
-    # OpenAIに問い合わせる
-    async def create_response(self, message):
-
-
-
