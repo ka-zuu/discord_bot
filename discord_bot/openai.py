@@ -39,7 +39,6 @@ class OpenAIDiscordBot(commands.Bot):
         if self.user in message.mentions:
             # typingを表示
             async with message.channel.typing():
-                #response = await self.create_response(message)
                 # 会話履歴を初期化
                 conversations = [{"role": "system", "content": self.prompt}]
                 # メッセージを会話履歴に追加
@@ -65,11 +64,3 @@ class OpenAIDiscordBot(commands.Bot):
             await message.reply(response.choices[0]["message"]["content"])
 
         await self.process_commands(message)
-
-    # サーバのグローバルIPアドレスを返すコマンド
-    async def gip(self, ctx):
-        try:
-            global_ip = requests.get('https://api.ipify.org').text
-            await ctx.send(f'実行サーバのグローバルIPアドレスは {global_ip} です')
-        except Exception as e:
-            await ctx.send(f'エラーが発生しました: {e}')
