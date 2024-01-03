@@ -2,5 +2,5 @@ pytest
 python-dotenv
 google-api-python-client
 google-auth
-openai
+openai==0.28
 discord.py
